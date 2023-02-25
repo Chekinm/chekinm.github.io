@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.header {
+    /* background-color: rgb(116, 113, 207); */
+    background: linear-gradient(45deg, rgb(78, 73, 177) 0%, rgb(76, 76, 114) 0%, rgb(74, 138, 151) 100%);
+}
+.main {
+    background: rgb(174,174,238);
+    background: radial-gradient(circle, rgba(174,174,238,1) 0%, rgba(148,187,233,1) 100%);
+}
