@@ -1,0 +1,23 @@
+1. Theme: Abraham Lempel and his compresion algorithm
+2. Original article from 1977 https://courses.cs.duke.edu/spring03/cps296.5/papers/ziv_lempel_1977_universal_algorithm.pdf
+3. Main page: Photo of Abraham, zip mp3 and other as background
+3.1 Text. On 4.o2.2023, i heard in news feed that Abraham Lempel was died at his (how many) 
+the news says that he is a father of modern compresion algorithm. like that which evrybody knows novadys.
+evrybody knows mp3, jpeg, or zip format. But just a few know how invented this thig for us.
+
+I decided to dedicate my project to Agraham. In ourjourney we will meet prof Abraham Lempel,
+learn the original idea of the compresion algorithm. 
+We even write simple implementation of this algoritm in python. Ready. Let's go!
+
+
+4. Bio. Some facts from wiki photos.
+
+5. Python implementation.
+
+6. LZV algorithm in modern worlds. 
+7. Bibliography. Links to interesting pages.
+
+
+
+
+

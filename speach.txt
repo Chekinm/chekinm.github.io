@@ -1,0 +1,29 @@
+Hello, dear friends. 
+
+On 4.o2.2023, I read a news article  that Abraham Lempel has died at his (how many),
+the article also says that he is a father of modern compresion algorithm. 
+It says that he study and works all his life in Haifa Technion university.
+I was suprised, that I never knew nothign bout him. 
+When I think about theme for my prject I decided to dedicate this work to him, 
+and to his algorithm.
+
+Fist of all, we learn something albut Israel computer scince, and people how stays 
+in fundament of what we now know as "startup nation phenomenon". 
+
+Second - the subject. To be a better programmer you need understand 
+how the programms works. Hope you will find it interesting.
+I tried to described it as simpel as it could be.   
+
+So, I decided to dedicate my project to Agraham. In our journey we will meet prof 
+Abraham Lempel, learn the original idea of the compresion algorithm. 
+We even will write simple implementation of this algoritm in python. 
+Also we will learn where this fundumentl algorithm is used nowdays.
+Ready. Let's go!
+
+
+About techical side of the project.
+1. Implementation.  
+2. Techology used.
+3. Revuew of html's
+4. Review of css's 
+5. Responsive implementaion. Mobile first, reactive elements.
