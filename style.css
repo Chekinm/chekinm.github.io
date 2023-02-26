@@ -4,12 +4,32 @@
     box-sizing: border-box;
 }
 
+body {
+    background: rgb(174,174,238);
+    background: radial-gradient(circle, rgba(174,174,238,1) 0%, rgba(148,187,233,1) 100%);
+}
 
 .header {
+    display: flex;
+    justify-items: end;
+    padding: 15px;
     /* background-color: rgb(116, 113, 207); */
     background: linear-gradient(45deg, rgb(78, 73, 177) 0%, rgb(76, 76, 114) 0%, rgb(74, 138, 151) 100%);
 }
+
+.head_image {
+    width: 110px;
+    height: auto;
+    margin-right: 15px;
+    
+}
+
 .main {
-    background: rgb(174,174,238);
-    background: radial-gradient(circle, rgba(174,174,238,1) 0%, rgba(148,187,233,1) 100%);
+    padding: 15px;
+    font-size: 20px;
+
+    }
+
+p {
+ margin-bottom: 15px;
 }
