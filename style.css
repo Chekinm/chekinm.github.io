@@ -79,7 +79,7 @@ body {
     
     font-size: 15px;
     height: 120px;
-    
+
 
 }
 
@@ -109,6 +109,7 @@ input, button {
 }
 
 .disable {        
+        pointer-events:none;
         background-color: rgb(237, 242, 242) !important;
         color:rgba(128, 129, 133, 0.573);
         border: 1px grey solid ;

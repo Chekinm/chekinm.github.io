@@ -22,8 +22,8 @@ def compress_lzw (string_to_compress):
     current_sub_string = ''
     code_to_write = None
 
-    for i in string_to_compress:
-        current_sub_string += i
+    for char in string_to_compress:
+        current_sub_string += char
         if current_sub_string in lzw_dict:
             code_to_write = lzw_dict[current_sub_string]
         else:
@@ -31,17 +31,13 @@ def compress_lzw (string_to_compress):
             lzw_dict[current_sub_string] = dict_index
             yield (dict_index, current_sub_string, code_to_write, ','.join(str(i) for i in compressed_string),None,None)
             dict_index += 1
-            current_sub_string = i
+            current_sub_string = char
             code_to_write = lzw_dict[current_sub_string]
     compressed_string.append(code_to_write)   # add last portion of information
-    yield (dict_index, current_sub_string, code_to_write, ','.join(str(i) for i in compressed_string),dict_to_decode,compressed_string)
-
-
-    #return compress_lzw
-    #return ''.join(dict_to_decode), ''.join(str(i) for i in compressed_string)
+    yield (dict_index, current_sub_string, code_to_write, ','.join(str(i) for i in compressed_string),dict_to_decode, compressed_string)
 
   
-def decompress_lzv (compressed_arr, dict_lzw_inv):
+def decompress_lzw (compressed_arr, dict_lzw_inv):
     """this function perform decompression of the specified compressed package using LZV algorithm"""
 
     dcmp_string = ''
@@ -65,5 +61,5 @@ def decompress_lzv (compressed_arr, dict_lzw_inv):
             dict_lzw_inv.append(current_sub_string)
             current_sub_string = dcmp_string[left_index]
         left_index += 1
-        yield (len(dict_lzw_inv), dict_lzw_inv[-1], dcmp_string, current_sub_string )
-    yield (dcmp_string,'','','')
+        yield (len(dict_lzw_inv)-1, dict_lzw_inv[-1], dcmp_string, current_sub_string )
+    yield (dcmp_string, '', '', '')
