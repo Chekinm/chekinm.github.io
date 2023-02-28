@@ -1,4 +1,4 @@
-from src.lzw import compress_lzw, decompress_lzv
+from src.lzw import compress_lzw, decompress_lzw
 from js import document
 
 class comp_gen_obj():
@@ -25,14 +25,14 @@ class decomp_gen_obj():
     def reset(self, compressed_arr, dict_lzw_inv):
         self.dict_to_decode = dict_lzw_inv
         self.code = compressed_arr
-        self.generator = decompress_lzv(compressed_arr, dict_lzw_inv)
+        self.generator = decompress_lzw(compressed_arr, dict_lzw_inv)
 
 
 res = comp_gen_obj()
 res.reset(Element("manual-inp").value)
 
 
-def compress(res):
+def compress(res):  # action on click  button in compress
 
     if res.flag == 0:
         res.reset(Element("manual-inp").value)
@@ -65,7 +65,7 @@ def compress(res):
 decomp = decomp_gen_obj()
 decomp.reset(res.code, res.dict_to_decode)
     
-def decompress(res):
+def decompress(res):   # action on click button in decompress
     if decomp.flag == 0:
         decomp.reset(res.code.copy(), res.dict_to_decode.copy())
         decomp.flag = 1
