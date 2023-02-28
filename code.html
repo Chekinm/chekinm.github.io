@@ -17,7 +17,7 @@
 
   </head>
     <body>
-      <h1 class="code header">LZW online compressor and decompressor</h1>
+      <h1 class="header">LZW online compressor and decompressor</h1>
       <p class="code description">On this page you can play with you own strings 
                 and LZW algorithm. I wrote these algorithms on Python and nested
                 it here using <a href="https://pyscript.net">PyScript</a>
@@ -25,14 +25,17 @@
       
       <div class="flex-cont">
       <div class = compress>
-        <p class = "comp-description"> Ok. Input some string here, and press button. It will compress you string step by step.</p>
+        <p class = "comp-description"> Ok. Input some string here and press button. It will compress your string step by step.</p>
         <p>Here is a string</p>
         <input id="manual-inp" value="abbabbb">
+        <p>Look at this</p>
         <button py-Click="compress(res)" id="compress">Compress with LZW</button>
       
-        <div id="output">Look at this
+        <div id="output">
           <div class="write" id="manual-write">
-              <!-- place where oyscript write smthing -->
+
+              <!-- place where Pyscript write by it's own -->
+              
           </div>
         </div>
       </div>
@@ -48,12 +51,17 @@
 
           <span>Look how it works</span>
           <button py-click="decompress(res)" id="decompress" class="disable">Decompress LZW</button> 
-          <div class="write" id="manual-write2"></div>
+          <div class="write" id="manual-write2">
+
+              <!-- place where Pyscript write by it's own -->
+            
+          </div>
         </div>
       </div>
       <py-script src="./src/py_code.py">
         
           <!-- see py_code.py for action -->
+
       </py-script>
     </body>
 </html>

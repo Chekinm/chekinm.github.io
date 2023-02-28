@@ -55,6 +55,7 @@ body {
 } */
 
 .description {
+    padding: 1%;
     
 }
 
@@ -62,37 +63,42 @@ body {
     display: flex; 
     flex-flow: row;
     font-size: 15px;
+    justify-content: space-evenly;
     
 }
 
 
 .compress {
-    border: 1px blue solid;
-    width: 50%;
+    border: 1px rgb(29, 29, 41) solid;
+    width: 49%;
     flex-flow: wrap;
+    padding: 1%;
 }
 
 .comp-description, .decomp-description  {
-    padding: 2%;
+    
     font-size: 15px;
     height: 120px;
 
 }
 
 .decompress {
-    border: 1px red solid;
-    width: 50%;
+    border: 1px rgb(29, 29, 41) solid;
+    width: 49%;
     flex-flow: wrap;
+    padding: 1%;
+   
 }
 
 input, button {
     width: 98%;
+    padding: 10px;
 }
 
 
 
 @media (min-width: 700px) {
-    h1 {
+    .h1 {
       font-size: 49px;
     }
   }
