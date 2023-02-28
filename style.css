@@ -16,7 +16,7 @@ body {
     display: flex;
     justify-items: end;
     padding: 15px;
-    /* background-color: rgb(116, 113, 207); */
+    background-color: rgb(116, 113, 207);
     background: linear-gradient(45deg, rgba(78, 73, 177,1) 0%, rgba(76, 76, 114, 1) 0%, rgba(74, 138, 151,1) 100%);
 }
 
@@ -31,20 +31,20 @@ body {
 .main {
     padding: 15px;
     font-size: 20px;
-
-    }
-
-p {
+    background-color: rgb(223, 251, 251);
     font-size: 30px;
     font-weight: 400;
     margin-bottom: 15px;
-}
+    }
 
 
-#img {
+
+
+
+/* #img {
     
     background-image: url("./media/bg_formulas.jpg");
-    background-size: cover;
+    background-size: 2000px;
     position: absolute;
     top: 200px;
     right: 0px;
@@ -52,10 +52,61 @@ p {
     left: 0px;
     opacity: 0.15;
 
+} */
+
+.description {
+    
 }
+
+.flex-cont  {
+    display: flex; 
+    flex-flow: row;
+    font-size: 15px;
+    
+}
+
+
+.compress {
+    border: 1px blue solid;
+    width: 50%;
+    flex-flow: wrap;
+}
+
+.comp-description, .decomp-description  {
+    padding: 2%;
+    font-size: 15px;
+    height: 120px;
+
+}
+
+.decompress {
+    border: 1px red solid;
+    width: 50%;
+    flex-flow: wrap;
+}
+
+input, button {
+    width: 98%;
+}
+
+
 
 @media (min-width: 700px) {
     h1 {
       font-size: 49px;
     }
   }
+
+.output {
+    border: 1px solid black;
+}
+
+.disable {        
+        background-color: rgb(237, 242, 242) !important;
+        color:rgba(128, 129, 133, 0.573);
+        border: 1px grey solid ;
+    }
+
+.disable > * {
+        pointer-events:none;
+    }
