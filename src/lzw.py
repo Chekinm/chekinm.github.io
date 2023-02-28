@@ -1,11 +1,12 @@
-def compress_lzv (string_to_compress):
+def compress_lzw (string_to_compress):
     """this funciton perform LZV compression of the specified string using LZV algorithm.
     it returns compressed string.
     it supposed that string_to_compress is a finite string, not a generator, as we need to create alphabet
-    for infinite stream of symbols it's better to use fixed alphabet valerian of the algorithm"""
+    for infinite stream of symbols it's better to use fixed alphabet variant of the algorithm"""
 
-    # create alphabet, it should include all the simbols from string_to_compress in order of appearance
-    # it will be the predicate of the compressed string, as we need it to decode message back
+    # first we need to create alphabet, it should include all the simbols from string_to_compress in order of 
+    # it's appearance. 
+    # it will be the predicate of the compressed string. we will need it to decode message back.
     lzw_dict = {}
     dict_index = 0
     for i in string_to_compress:
@@ -36,7 +37,7 @@ def compress_lzv (string_to_compress):
     yield (dict_index, current_sub_string, code_to_write, ','.join(str(i) for i in compressed_string),dict_to_decode,compressed_string)
 
 
-    #return compress_lzv
+    #return compress_lzw
     #return ''.join(dict_to_decode), ''.join(str(i) for i in compressed_string)
 
   
@@ -65,4 +66,4 @@ def decompress_lzv (compressed_arr, dict_lzw_inv):
             current_sub_string = dcmp_string[left_index]
         left_index += 1
         yield (len(dict_lzw_inv), dict_lzw_inv[-1], dcmp_string, current_sub_string )
-    yield dcmp_string
+    yield (dcmp_string,'','','')
