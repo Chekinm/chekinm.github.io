@@ -78,7 +78,7 @@ body {
 .comp-description, .decomp-description  {
     
     font-size: 15px;
-    height: 120px;
+    height: auto;
 
 
 }
@@ -94,6 +94,7 @@ body {
 .textbox, .button {
     width: 98%;
     padding: 5px;
+    margin-bottom: 10px;
 }
 
 
@@ -104,9 +105,7 @@ body {
     }
   }
 
-.output {
-    border: 1px solid black;
-}
+
 
 .disable {        
         pointer-events:none;
@@ -115,22 +114,70 @@ body {
         border: 1px grey solid;
     }
 
-.textbox {     
-        color:black;    
-    }
+
 
 .disable > * {
         pointer-events:none;
     }
 
-#chk {
-    border: 1px black solid;
-    display: flex;
-   
-    
-}
-#override {
-    justify-content:left;
+.textbox {     
+        color:black;    
+    }
+
+/* #override-inp {
+    border:1px black;
+    justify-content:right;
     padding: 0px;
     margin: 0;
+} */
+
+
+
+
+.table {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+}
+
+.table-cell-header {
+    border: 1px black solid;
+    padding: 1px;
+    font-size: 0.9em;
+    width: calc(98%/5);
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    flex-flow:  wrap;
+    background-color: rgb(162, 204, 204);
+    
+}
+
+
+
+
+
+.table-cell {
+    border: 1px black solid;
+    padding: 1px;
+    font-size: 0.9em;
+    width: calc(98%/5);
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    flex-flow:  wrap;
+    
+}
+
+.table-cell-last {
+    border: 1px black solid;
+    padding: 1px;
+    font-size: 0.9em;
+    width: 98%;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    flex-flow:  wrap;
+    background-color: rgb(162, 204, 204);
+    
 }

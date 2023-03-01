@@ -31,13 +31,23 @@
         <p>Here is a string</p>
         <input class="input textbox" id="manual-inp" value="abbabbb">
         <p>Look at this</p>
-        <button class="input button" py-Click="compress(res)" id="compress">Compress with LZW</button class="input button">
+        
       
-        <div id="output">
+        <div class="output">
           <div class="write" id="manual-write">
+            <div class="table" id="compress-table">
+              <div class="table-cell-header" id="th-1">Char</div>
+              <div class="table-cell-header" id="th-2">Current substring</div>
+              <div class="table-cell-header" id="th-3">Code added</div>
+              <div class="table-cell-header" id="th-4">Dict value</div>
+              <div class="table-cell-header" id="th-5">Dict code</div>
+            <div class="table" id="compress-output"></div>
 
-              <!-- place where Pyscript write here by it's own -->
-              
+                <!-- place where Pyscript write here by it's own -->
+
+            </div>
+            <button class="input button" py-Click="compress(res)" id="compress">Compress with LZW</button class="input button">      
+            
           </div>
         </div>
       </div>
