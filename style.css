@@ -91,9 +91,9 @@ body {
    
 }
 
-input, button {
+.textbox, .button {
     width: 98%;
-    padding: 10px;
+    padding: 5px;
 }
 
 
@@ -111,10 +111,26 @@ input, button {
 .disable {        
         pointer-events:none;
         background-color: rgb(237, 242, 242) !important;
-        color:rgba(128, 129, 133, 0.573);
-        border: 1px grey solid ;
+        color:rgba(34, 34, 34, 0.573);
+        border: 1px grey solid;
+    }
+
+.textbox {     
+        color:black;    
     }
 
 .disable > * {
         pointer-events:none;
     }
+
+#chk {
+    border: 1px black solid;
+    display: flex;
+   
+    
+}
+#override {
+    justify-content:left;
+    padding: 0px;
+    margin: 0;
+}

@@ -1,6 +1,9 @@
 from src.lzw import compress_lzw, decompress_lzw
 from js import document
 
+
+# class definitions.
+
 class comp_gen_obj():
 
     def __init__(self):
@@ -28,8 +31,6 @@ class decomp_gen_obj():
         self.generator = decompress_lzw(compressed_arr, dict_lzw_inv)
 
 
-res = comp_gen_obj()
-res.reset(Element("manual-inp").value)
 
 
 def compress(res):  # action on click  button in compress
@@ -49,10 +50,10 @@ def compress(res):  # action on click  button in compress
             Element("manual-write").write(output, append=True)
             res.dict_to_decode = output[4]
             res.code = output[5]
-            Element("dict").element.value = (''.join(str(i) for i in output[4]))
-            Element("code").element.value = (''.join(str(i) for i in output[5]))
-           # Element('compress').element.innerText = "Try Again"
-            Element('decompress').remove_class ('disable')
+            if not Element("override-inp").element.checked:
+                Element("dict").element.value = (','.join(str(i) for i in output[4]))
+                Element("code").element.value = (','.join(str(i) for i in output[5]))
+                Element('decompress').remove_class ('disable')
             
     except StopIteration as e:
         Element("manual-write").write('we did it', append=True)
@@ -62,24 +63,67 @@ def compress(res):  # action on click  button in compress
            
     return res
 
-decomp = decomp_gen_obj()
-decomp.reset(res.code, res.dict_to_decode)
     
 def decompress(res):   # action on click button in decompress
-    if decomp.flag == 0:
-        decomp.reset(res.code.copy(), res.dict_to_decode.copy())
-        decomp.flag = 1
-        Element('manual-write2').element.innerHTML = ""
-    
-    try:
-        decomp.fin_str = next(decomp.generator)
-        Element("manual-write2").write (decomp.fin_str, append=True)
-        
+    """all action performas on click decompress button
+    dependind on  ovveride-inp checkbox state."""
 
+    if decomp.flag == 0:  # need this to reloop action, without refreshing page  
+        if Element("override-inp").element.checked:   # check if we are in manual mode
+            cd = Element("code").value
+            Element("manual-write2").write (cd, append=True)
+            inp_code = [int(k) for k in Element("code").value.split(',')]   # process input string
+            inp_dict = Element("dict").value.split(',')   
+            decomp.reset(inp_code, inp_dict,)  #initilize with inputed values
+        
+        else:
+            decomp.reset(res.code.copy(), res.dict_to_decode.copy())   # get values from compressed pricedure
+        decomp.flag = 1
+        Element('manual-write2').element.innerHTML = ""  # clear output table
     
+    try: 
+        decomp.out_str = next(decomp.generator)
+        Element("manual-write2").write (decomp.out_str, append=True)
+        
     except StopIteration as e:
         Element("manual-write2").write ('Here you are!', append=True)
         decomp.flag = 0   
-
-        
+      
     return decomp
+
+
+def check_box_action():
+    if Element("override-inp").element.checked:
+        Element("dict").remove_class ('disable')
+        Element("code").remove_class ('disable')
+        Element("decompress").remove_class ('disable')
+        
+
+    else:
+        Element("dict").add_class ('disable')
+        Element("code").add_class ('disable')
+        Element("decompress").add_class ('disable')
+
+def print_table_row(out_str):
+    """construct nice css formated outout for our function"""
+    out_str = (3, 'bb', 1, '0,1', None, None)
+    step_num = out_str[1]
+    curr_sub
+
+
+
+    
+
+# don't actally do without action on page. Just initialize objects in case somebody thouch buutons
+
+# default object for dial with  compress 
+res = comp_gen_obj()
+res.reset(Element("manual-inp").value)
+
+
+# default object to dial with decompress
+decomp = decomp_gen_obj()
+decomp.reset(res.code, res.dict_to_decode)
+
+
+

@@ -21,46 +21,63 @@
       <p class="code description">On this page you can play with you own strings 
                 and LZW algorithm. I wrote these algorithms on Python and nested
                 it here using <a href="https://pyscript.net">PyScript</a>
-                Just type the string you want to compress and hit the button.</p>
+                Just type the string you want to compress and hit the button class="input button". Once the compress process will be completed, 
+                the result will be placed in the deciding section on the left. Now you can, go trough decode process, also step-by-step.
+                If you want to play with your own string to decode, it should be  </p>
       
       <div class="flex-cont">
       <div class = compress>
-        <p class = "comp-description"> Ok. Input some string here and press button. It will compress your string step by step.</p>
+        <p class = "comp-description"> Ok. Input some string here and press button class="input button". It will compress your string step by step.</p>
         <p>Here is a string</p>
-        <input id="manual-inp" value="abbabbb">
+        <input class="input textbox" id="manual-inp" value="abbabbb">
         <p>Look at this</p>
-        <button py-Click="compress(res)" id="compress">Compress with LZW</button>
+        <button class="input button" py-Click="compress(res)" id="compress">Compress with LZW</button class="input button">
       
         <div id="output">
           <div class="write" id="manual-write">
 
-              <!-- place where Pyscript write by it's own -->
+              <!-- place where Pyscript write here by it's own -->
               
           </div>
         </div>
       </div>
           
-      <div class="decompress">
+      <div class="decompress" id="decompress-block">
 
         <p class="decomp-description"> So. We've got our coded string and we have dictionary with single simols. Let's decode it back.</p>
-        <div class="write" id="manual-write1"></div> 
-        <p>Here is our dictinary</p> 
-          <input id="dict" value=""><br>
-          <p>And here is our compressed string</p> 
-          <input id="code" value="">
+        <div class="write" id="manual-write1">
 
-          <span>Look how it works</span>
-          <button py-click="decompress(res)" id="decompress" class="disable">Decompress LZW</button> 
+          <!-- place where Pyscript write here by it's own -->
+
+        
+        <p>Here is our dictinary</p> 
+          <input class="input textbox disable" id="dict" value="">
+
+          <p>And here is our compressed string</p> 
+          
+          <input class="input textbox disable" id="code" value="">
+          
+          
+          <label>
+            <input class="input chekbox" type="checkbox" id="override-inp" name="override-inp" py-Click="check_box_action()"> 
+            Check, if you want to decompress you own data. (This is beta-version, use at your own risk:)
+          </label>
+
+
+          <p>Look how it works</p>
+          
+          <button class="input button disable" py-click="decompress(res)" id="decompress">Decompress LZW</button class="input button"> 
+          
           <div class="write" id="manual-write2">
 
-              <!-- place where Pyscript write by it's own -->
+            <!-- place where Pyscript write here by it's own -->
             
           </div>
         </div>
       </div>
       <py-script src="./src/py_code.py">
         
-          <!-- see py_code.py for action -->
+          <!-- executed  py_code.py  -->
 
       </py-script>
     </body>
