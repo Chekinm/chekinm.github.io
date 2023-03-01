@@ -12,7 +12,7 @@ def compress_lzw (string_to_compress):
     for i in string_to_compress:
         if i not in lzw_dict:
             lzw_dict[i] = dict_index
-            yield (lzw_dict[i], i, '', '', None, None)
+            yield (None,None,None,None,lzw_dict[i], i, None, None)
             dict_index += 1
     dict_to_decode = list(lzw_dict)  # we need a separate copy of the alphabet to send, better to have it as list
 
@@ -21,20 +21,24 @@ def compress_lzw (string_to_compress):
     compressed_string = []  # will be a list of decimal numbers calculated using LZW method
     current_sub_string = ''
     code_to_write = None
+    step_count = 1
 
     for char in string_to_compress:
         current_sub_string += char
         if current_sub_string in lzw_dict:
             code_to_write = lzw_dict[current_sub_string]
+            yield (step_count, char, current_sub_string, None, None, None, None,None)
         else:
             compressed_string.append(code_to_write)
             lzw_dict[current_sub_string] = dict_index
-            yield (dict_index, current_sub_string, code_to_write, ','.join(str(i) for i in compressed_string),None,None)
+            yield (step_count, char, current_sub_string, code_to_write, current_sub_string, dict_index, None, None)
             dict_index += 1
             current_sub_string = char
             code_to_write = lzw_dict[current_sub_string]
+        step_count += 1
+
     compressed_string.append(code_to_write)   # add last portion of information
-    yield (dict_index, current_sub_string, code_to_write, ','.join(str(i) for i in compressed_string),dict_to_decode, compressed_string)
+    yield (step_count, None, current_sub_string, code_to_write, None, None, dict_to_decode, compressed_string)
 
   
 def decompress_lzw (compressed_arr, dict_lzw_inv):

@@ -44,15 +44,15 @@ def compress(res):  # action on click  button in compress
     Element('compress').element.innerText = "Next step"
     try:
         output = next(res.generator)
-        if output[5] == None: 
+        if output[7] == None: 
             Element("manual-write").write(output, append=True)
         else:
             Element("manual-write").write(output, append=True)
-            res.dict_to_decode = output[4]
-            res.code = output[5]
+            res.dict_to_decode = output[6]
+            res.code = output[7]
             if not Element("override-inp").element.checked:
-                Element("dict").element.value = (','.join(str(i) for i in output[4]))
-                Element("code").element.value = (','.join(str(i) for i in output[5]))
+                Element("dict").element.value = (','.join(str(i) for i in output[6]))
+                Element("code").element.value = (','.join(str(i) for i in output[7]))
                 Element('decompress').remove_class ('disable')
             
     except StopIteration as e:
@@ -104,11 +104,17 @@ def check_box_action():
         Element("code").add_class ('disable')
         Element("decompress").add_class ('disable')
 
-def print_table_row(out_str):
-    """construct nice css formated outout for our function"""
-    out_str = (3, 'bb', 1, '0,1', None, None)
-    step_num = out_str[1]
-    curr_sub
+def print_comp_table_row(out_str):
+    """construct nice css formated outout for our function
+    [1] number of current simbol
+    [2] current symbol
+    [3] current substring
+    [4] code to append
+    [5] new dict record
+    [6] it's code
+    [7] short dict to decompress appear only in the end
+    [8] compressed string code appear onlly in the end"""
+    
 
 
 
