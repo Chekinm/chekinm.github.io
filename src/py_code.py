@@ -1,7 +1,6 @@
 from src.lzw import compress_lzw, decompress_lzw
 from js import document
 
-
 # class definitions.
 
 class comp_gen_obj():
@@ -196,18 +195,7 @@ def print_last_decomp_output(out_str, table_counter):
     output_table_counter.reset(ind+1) 
 
 
-
-
-
-
-
-    
-
-
-
-    
-
-# don't actally do anyting without action on page. Just initialize some objects in case somebody thouch buutons
+# main part don't actally do anyting without action on page. Here we just initialize some objects in case somebody thouch buutons
 
 # default object for dial with  compress 
 res = comp_gen_obj()
