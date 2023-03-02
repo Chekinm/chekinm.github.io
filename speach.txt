@@ -26,11 +26,11 @@ About techical side of the project.
 
     It takes me something about 30 to 40  hour to do all the job, excluding thinking about conception itself.
 2. Techology used.
-    It is HTML 5 site with PyScript ised for automation of the code.html page.
+    It is HTML 5 site with PyScript used for automation of the html page.
     I try to do it on pure Pyscript, but stuck on table deletion, and was had to use JS python module  in PYscript, 
     as I still don't know JSscript.
     By the road I leared a lot abuut DOM conception.
-3. Revuew of html's
+3. Review of html's
 
 4. Review of css's
 

@@ -67,7 +67,7 @@ def decompress_lzw (compressed_arr, dict_lzw_inv):
                 i += 1
         current_sub_string += dcmp_string[left_index]
 
-        num = '-' 
+        num = '-'    # we need this to values to pass to the output to the web
         dict = '-'
         
         if current_sub_string not in dict_lzw_inv:
