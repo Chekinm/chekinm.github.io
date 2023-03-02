@@ -233,8 +233,8 @@ a {
     text-align: center;
     display: flex;
     flex-flow:  wrap;
-    background-color: rgb(162, 204, 204);
-    font-weight: 600;
+    background: rgb(164,204,204);
+    background: linear-gradient(209deg, rgba(164,204,204,1) 0%, rgba(150,170,213,1) 100%); font-weight: 600;
 }
 
 
@@ -259,7 +259,8 @@ a {
     justify-content: center;
     display: flex;
     flex-flow:  wrap;
-    background-color: rgb(162, 204, 204);
+    background: rgb(162,204,204);
+    background: radial-gradient(circle, rgba(162,204,204,1) 0%, rgba(32,140,191,1) 100%);
     
 }
 
