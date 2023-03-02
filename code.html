@@ -10,14 +10,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>On-line LZW</title>
-  <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/x-icon" href="./media/favicon.ico">
   <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
   <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+  <link rel="stylesheet" href="style.css">
 
   </head>
     <body>
-      <h1 class="header">LZW online compressor and decompressor</h1>
+      <div class="header">
+           <h1>LZW online compressor and decompressor</h1>
+      </div>
       <p class="code description">On this page you can play with you own strings 
                 and LZW algorithm. I wrote these algorithms on Python and nested
                 it here using <a href="https://pyscript.net">PyScript</a>
@@ -27,7 +29,7 @@
       
       <div class="flex-cont">
       <div class = compress>
-        <p class = "comp-description"> Ok. Input some string here and press button class="input button". It will compress your string step by step.</p>
+        <p class = "comp-description"> Ok. Input some string here and press button. It will compress your string step by step.</p>
         <p>Here is a string</p>
         <input class="input textbox" id="manual-inp" value="abbabbb">
         <p>Look at this</p>
@@ -35,6 +37,9 @@
       
         <div class="output">
           <div class="write" id="manual-write">
+           
+            <button class="input button" py-Click="compress(res)" id="compress">Compress with LZW</button class="input button">      
+           
             <div class="table" id="compress-table">
               <div class="table-cell-header" id="th-1">Char</div>
               <div class="table-cell-header" id="th-2">Current substring</div>
@@ -43,53 +48,55 @@
               <div class="table-cell-header" id="th-5">Dict code</div>
             <div class="table" id="compress-output"></div>
 
-                <!-- place where Pyscript write here by it's own -->
+                <!-- place where Pyscript write compress table by it's own tabel -->
 
-            </div>
-            <button class="input button" py-Click="compress(res)" id="compress">Compress with LZW</button class="input button">      
-            
+            </div>         
           </div>
         </div>
       </div>
           
       <div class="decompress" id="decompress-block">
-
         <p class="decomp-description"> So. We've got our coded string and we have dictionary with single simols. Let's decode it back.</p>
-        <div class="write" id="manual-write1">
+          <div class="write" id="manual-write1">
 
-          <!-- place where Pyscript write here by it's own -->
+            <p>Here is our dictionary</p>  
+            <!-- place where Pyscript write here by it's own -->
 
-        
-        <p>Here is our dictinary</p> 
           <input class="input textbox disable" id="dict" value="">
 
-          <p>And here is our compressed string</p> 
-          
+            <p>And here is our compressed string</p> 
+            <!-- place where Pyscript write here by it's own -->
+
           <input class="input textbox disable" id="code" value="">
-          
           
           <label>
             <input class="input chekbox" type="checkbox" id="override-inp" name="override-inp" py-Click="check_box_action()"> 
             Check, if you want to decompress you own data. (This is beta-version, use at your own risk:)
           </label>
 
-
-          <p>Look how it works</p>
-          
+          <p>Look how it works</p>         
           <button class="input button disable" py-click="decompress(res)" id="decompress">Decompress LZW</button class="input button"> 
           
-          <div class="write" id="manual-write2">
+            <div class="output">
+                <div class="table" id="decompress-table">
+                  <div class="table-cell-header" id="th-1">Char</div>
+                  <div class="table-cell-header" id="th-2">Current substring</div>
+                  <div class="table-cell-header" id="th-3">Dict value</div>
+                  <div class="table-cell-header" id="th-4">Dict code</div>
+                  <div class="table-cell-header" id="th-5">Decomp string</div>
+                  <div class="table" id="decompress-output">
 
-            <!-- place where Pyscript write here by it's own -->
-            
-          </div>
+                    <!-- place where Pyscript write decompress table  by it's own -->
+    
+                  </div>
+                </div>              
+            </div>
         </div>
       </div>
       <py-script src="./src/py_code.py">
         
-          <!-- executed  py_code.py  -->
+          <!-- execute  py_code.py  -->
 
       </py-script>
     </body>
 </html>
-

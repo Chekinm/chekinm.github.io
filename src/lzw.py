@@ -50,7 +50,12 @@ def decompress_lzw (compressed_arr, dict_lzw_inv):
     i = 0            # index on compressed array
     current_sub_string = ''
 
+    for k in range(len(dict_lzw_inv)):
+        yield (None, None, dict_lzw_inv[k], k, None)
+    
+
     while i < len(compressed_arr):
+        char = compressed_arr[i]
         if left_index == right_index:
             if compressed_arr[i] < len(dict_lzw_inv):
                 dcmp_string += dict_lzw_inv[compressed_arr[i]]
@@ -61,9 +66,15 @@ def decompress_lzw (compressed_arr, dict_lzw_inv):
                 right_index = len(dcmp_string)
                 i += 1
         current_sub_string += dcmp_string[left_index]
+
+        num = '-' 
+        dict = '-'
+        
         if current_sub_string not in dict_lzw_inv:
             dict_lzw_inv.append(current_sub_string)
             current_sub_string = dcmp_string[left_index]
+            num = len(dict_lzw_inv)-1 
+            dict = dict_lzw_inv[-1]
         left_index += 1
-        yield (len(dict_lzw_inv)-1, dict_lzw_inv[-1], dcmp_string, current_sub_string )
-    yield (dcmp_string, '', '', '')
+        yield (char, current_sub_string,  dict, num, dcmp_string)
+    yield (dcmp_string, None, None, None, None)
