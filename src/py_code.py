@@ -73,6 +73,7 @@ def compress(res):
             print_comp_table_row(output, output_table_counter)
             
         else:
+            print_comp_table_row(output, output_table_counter)
             print_last_strings(output, output_table_counter)
            # Element("manual-write").write(output, append=True)
             res.dict_to_decode = output[5]
