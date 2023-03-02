@@ -8,6 +8,12 @@ body {
     background: radial-gradient(circle, rgba(174,174,238,0.2) 0%, rgba(148,187,233,0.2) 100%); 
 }
 
+
+/*******************/
+/* headers         */
+/*******************/
+
+
 .header {
     font-size: 3vw;
     display: flex;
@@ -23,6 +29,26 @@ body {
     margin-right: 15px;
     opacity: 1;
 }
+
+/*******************/
+/* navigation menu */
+/*******************/
+
+.navi-bar{
+    display: flexbox;
+    background-color: rgb(116, 113, 207);
+    background: linear-gradient(45deg, rgba(74, 138, 151,1) 100%), rgba(78, 73, 177,1) 0%, rgba(76, 76, 114, 1) 0% ;
+
+}
+
+
+
+
+
+/*********************************/
+/* main section and text         */
+/*********************************/
+
 
 .main {
     padding: 15px;
@@ -44,14 +70,32 @@ body {
     margin-bottom: 15px;
 }
 
-.bio-para{
-    padding: 2%;
+
+
+.bio-para, .main-para, .biblo-para{
+    padding: 1%;
     text-align: justify;
+    font-size: 20px;
+}
+
+.copyright{
+    font-size: 12px;
+}
+
+
+.lib-img {
+    width: 30vh;
 }
 
 .description {
     padding: 1%;  
 }
+
+
+/***********************************/
+/* interactive page,  tables etc   */
+/***********************************/
+
 
 .flex-cont  {
     display: flex; 
@@ -148,6 +192,12 @@ body {
     background-color: rgb(162, 204, 204);
     
 }
+
+
+/*********************************/
+/* media querys                   */
+/*********************************/
+
 
 
 @media (min-width: 700px) {
