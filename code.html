@@ -17,9 +17,9 @@
 
   </head>
     <body>
-      <div class="header">
+      <header class="header">
            <h1>LZW online compressor and decompressor</h1>
-      </div>
+      </header>
       <nav role="navigation">
         <ul class="menu-bar">         
           <li><a class="drop-down-menu" href="#">MENU</a>
@@ -34,82 +34,83 @@
         </ul>
       </nav>
 
-
-      <p class="code description">On this page you can play with you own strings 
-                and LZW algorithm. I wrote these algorithms on Python and nested
-                it here using <a href="https://pyscript.net">PyScript</a>.
-                Just type the string that you want to compress and hit the button. Once, the compress process will be completed, 
-                the result will be placed in the decoding section on the right. Now you can go trough the decode process, also step-by-step.
-                If you want to play with your own string to decode, you should check corresponding checkbox.
-                Be aware that algorithm only understand comma-separated values in the decode section.</p>
-      
-      <div class="flex-cont">
-      <div class = compress>
-        <p class = "comp-description"> Ok. Input some string here and press button. It will compress your string step by step.</p>
-        <p>Here is a string</p>
-        <input class="input textbox" id="manual-inp" value="abbabbb">
-        <p>Look at this</p>
+      <main>
+        <p class="code description">On this page you can play with you own strings 
+                  and LZW algorithm. I wrote these algorithms on Python and nested
+                  it here using <a href="https://pyscript.net">PyScript</a>.
+                  Just type the string that you want to compress and hit the button. Once, the compress process will be completed, 
+                  the result will be placed in the decoding section on the right. Now you can go trough the decode process, also step-by-step.
+                  If you want to play with your own string to decode, you should check corresponding checkbox.
+                  Be aware that algorithm only understand comma-separated values in the decode section.
+        </p>
         
-      
-        <div class="output">
-          <div class="write" id="manual-write">
-           
-            <button class="input button" py-Click="compress(res)" id="compress">Compress with LZW</button class="input button">      
-           
-            <div class="table" id="compress-table">
-              <div class="table-cell-header" id="th-1">Char</div>
-              <div class="table-cell-header" id="th-2">Current substring</div>
-              <div class="table-cell-header" id="th-3">Code added</div>
-              <div class="table-cell-header" id="th-4">Dict value</div>
-              <div class="table-cell-header" id="th-5">Dict code</div>
-            <div class="table" id="compress-output"></div>
+        <div class="flex-cont">
+        <div class = compress>
+          <p class = "comp-description"> Ok. Input some string here and press button. It will compress your string step by step.</p>
+          <p>Here is a string</p>
+          <input class="input textbox" id="manual-inp" value="abbabbb">
+          <p>Look at this</p>
+          
+        
+          <div class="output">
+            <div class="write" id="manual-write">
+            
+              <button class="input button" py-Click="compress(res)" id="compress">Compress with LZW</button class="input button">      
+            
+              <div class="table" id="compress-table">
+                <div class="table-cell-header" id="th-1">Char</div>
+                <div class="table-cell-header" id="th-2">Current substring</div>
+                <div class="table-cell-header" id="th-3">Code added</div>
+                <div class="table-cell-header" id="th-4">Dict value</div>
+                <div class="table-cell-header" id="th-5">Dict code</div>
+              <div class="table" id="compress-output"></div>
 
-                <!-- place where Pyscript write compress table by it's own tabel -->
+                  <!-- place where Pyscript write compress table by it's own tabel -->
 
-            </div>         
+              </div>         
+            </div>
           </div>
         </div>
-      </div>
-          
-      <div class="decompress" id="decompress-block">
-        <p class="decomp-description"> So. We've got our coded string and we have dictionary with single simols. Let's decode it back.</p>
-          <div class="write" id="manual-write1">
+            
+        <div class="decompress" id="decompress-block">
+          <p class="decomp-description"> So. We've got our coded string and we have dictionary with single simols. Let's decode it back.</p>
+            <div class="write" id="manual-write1">
 
-            <p>Here is our dictionary</p>  
-            <!-- place where Pyscript write here by it's own -->
+              <p>Here is our dictionary</p>  
+              <!-- place where Pyscript write here by it's own -->
 
-          <input class="input textbox disable" id="dict" value="">
+            <input class="input textbox disable" id="dict" value="">
 
-            <p>And here is our compressed string</p> 
-            <!-- place where Pyscript write here by it's own -->
+              <p>And here is our compressed string</p> 
+              <!-- place where Pyscript write here by it's own -->
 
-          <input class="input textbox disable" id="code" value="">
-          
-          <label>
-            <input class="input chekbox" type="checkbox" id="override-inp" name="override-inp" py-Click="check_box_action()"> 
-            Check, if you want to decompress you own data. (This is beta-version, use at your own risk:)
-          </label>
+            <input class="input textbox disable" id="code" value="">
+            
+            <label>
+              <input class="input chekbox" type="checkbox" id="override-inp" name="override-inp" py-Click="check_box_action()"> 
+              Check, if you want to decompress you own data. (This is beta-version, use at your own risk:)
+            </label>
 
-          <p>Look how it works</p>         
-          <button class="input button disable" py-click="decompress(res)" id="decompress">Decompress LZW</button class="input button"> 
-          
-            <div class="output">
-                <div class="table" id="decompress-table">
-                  <div class="table-cell-header" id="th-1">Char</div>
-                  <div class="table-cell-header" id="th-2">Current substring</div>
-                  <div class="table-cell-header" id="th-3">Dict value</div>
-                  <div class="table-cell-header" id="th-4">Dict code</div>
-                  <div class="table-cell-header" id="th-5">Decomp string</div>
-                  <div class="table" id="decompress-output">
+            <p>Look how it works</p>         
+            <button class="input button disable" py-click="decompress(res)" id="decompress">Decompress LZW</button class="input button"> 
+            
+              <div class="output">
+                  <div class="table" id="decompress-table">
+                    <div class="table-cell-header" id="th-1">Char</div>
+                    <div class="table-cell-header" id="th-2">Current substring</div>
+                    <div class="table-cell-header" id="th-3">Dict value</div>
+                    <div class="table-cell-header" id="th-4">Dict code</div>
+                    <div class="table-cell-header" id="th-5">Decomp string</div>
+                    <div class="table" id="decompress-output">
 
-                    <!-- place where Pyscript write decompress table  by it's own -->
-    
-                  </div>
-                </div>              
-            </div>
-        </div>
-      </div>
+                      <!-- place where Pyscript write decompress table  by it's own -->
       
+                    </div>
+                  </div>              
+              </div>
+          </div>
+        </div>
+    </main>
       <py-script src="./src/py_code.py">
         
           <!-- execute  py_code.py  -->

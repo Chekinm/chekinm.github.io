@@ -11,6 +11,10 @@ body {
 
 }
 
+strong, b {
+    font-weight: 400;
+}
+
 
 /*******************/
 /* headers         */
@@ -40,21 +44,19 @@ body {
 .navi-drop-down {
     display: flex;
 }
+
 a {
     text-decoration: none;
   }
   
 
-  
-  ul {
-    display: flex;
-    height: 40px;
-    background-color: rgb(116, 113, 207);
-    background: linear-gradient(-45deg, rgba(78, 73, 177,1) 0%, rgba(76, 76, 114, 1) 0%, rgba(74, 138, 151,1) 100%);
+ul {
+  display: flex;
+  height: 40px;
+  background-color: rgb(116, 113, 207);
+  background: linear-gradient(-45deg, rgba(78, 73, 177,1) 0%, rgba(76, 76, 114, 1) 0%, rgba(74, 138, 151,1) 100%);
 
-    list-style: none;
-   
-    padding-left: ;
+  list-style: none;
   }
   
   li {
@@ -72,20 +74,20 @@ a {
     
   }
     
-  li a {
+li a {
     color: #121018;
     font-size: 1em;
     font-weight: 900;
   }
   
-  li:hover {
+li:hover {
     background-color: rgb(116, 113, 207);
     background: linear-gradient(45deg, rgba(78, 73, 177,1) 0%, rgba(76, 76, 114, 1) 0%, rgba(74, 138, 151,1) 100%);
 
     cursor: pointer;
   }
   
-  ul li ul {
+ul li ul {
     visibility: hidden;
     opacity: 0;
     min-width: 5rem;
@@ -97,8 +99,8 @@ a {
     display: none;
   }
   
-  ul li:hover > ul,
-  ul li ul:hover {
+ul li:hover > ul,
+ul li ul:hover {
     visibility: visible;
     opacity: 1;
     display: block;
@@ -106,19 +108,14 @@ a {
     z-index: 1;
   }
   
-  ul li ul li {
+ul li ul li {
     clear: both;
     width: 100%;
-
   }
-
-
-
 
 /*********************************/
 /* main section and text         */
 /*********************************/
-
 
 .main {
     padding: 15px;
@@ -129,7 +126,6 @@ a {
     margin-bottom: 15px;
 }
 
-
 .bio-main {
     padding: 15px;
     font-size: 20px;
@@ -139,8 +135,6 @@ a {
     font-weight: 400;
     margin-bottom: 15px;
 }
-
-
 
 .bio-para, .main-para, .biblo-para{
     padding: 1%;
@@ -161,11 +155,9 @@ a {
     padding: 1%;  
 }
 
-
 /***********************************/
 /* interactive page,  tables etc   */
 /***********************************/
-
 
 .flex-cont  {
     display: flex; 
@@ -246,8 +238,7 @@ a {
     align-content: center;
     justify-content: center;
     display: flex;
-    flex-flow:  wrap;
-    
+    flex-flow:  wrap;    
 }
 
 .table-cell-last {
@@ -264,20 +255,14 @@ a {
     
 }
 
-
 /*********************************/
-/* media querys                   */
+/* media queries                 */
 /*********************************/
-
-
 
 @media (min-width: 700px) {
     h1 {
       font-size: 42px;
     }
-
-
-
   }
 
   @media (max-width: 720px) {
@@ -298,3 +283,4 @@ a {
     h1 {
         font-size: 25px;
     }
+  }
