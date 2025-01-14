@@ -1,0 +1,10 @@
+{
+    "packages": [
+        "arrr"
+    ],
+    "interpreter": "https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.mjs",
+    "files": {
+        "./src/lzw.py": "./src/lzw.py",
+        "./src/py_code.py": "./src/py_code.py"
+    }
+}

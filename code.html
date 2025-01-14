@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- <py-env> - js</py-env> -->
-  <py-config>
-    [[fetch]]
-    files = ["src/lzw.py"]
-  </py-config>
-
   <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>On-line LZW</title>
   <link rel="icon" type="image/x-icon" href="./media/favicon.ico">
-  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://pyscript.net/releases/2024.11.1/core.css">
+  <script type="module" src="https://pyscript.net/releases/2024.11.1/core.js"></script>
+  <script type="module">
+    const loading = document.getElementById('loading');
+    addEventListener('py:ready', () => loading.close());
+    loading.showModal();
+  </script>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="custom_pyscript.css">
 
   </head>
     <body>
+      <dialog id="loading">
+        <h1>Pyscript is loading...</h1>
+      </dialog>
       <header class="header">
            <h1>LZW online compressor and decompressor</h1>
       </header>
@@ -55,7 +58,7 @@
           <div class="output">
             <div class="write" id="manual-write">
             
-              <button class="input button" py-Click="compress(res)" id="compress">Compress with LZW</button class="input button">      
+              <button class="input button" id="compress">Compress with LZW</button class="input button">      
             
               <div class="table" id="compress-table">
                 <div class="table-cell-header" id="th-1">Char</div>
@@ -87,12 +90,12 @@
             <input class="input textbox disable" id="code" value="">
             
             <label>
-              <input class="input chekbox" type="checkbox" id="override-inp" name="override-inp" py-Click="check_box_action()"> 
+              <input class="input chekbox" type="checkbox" id="override-inp" name="override-inp"> 
               Check, if you want to decompress you own data. (This is beta-version, use at your own risk:)
             </label>
 
             <p>Look how it works</p>         
-            <button class="input button disable" py-click="decompress(res)" id="decompress">Decompress LZW</button class="input button"> 
+            <button class="input button disable" id="decompress">Decompress LZW</button class="input button"> 
             
               <div class="output">
                   <div class="table" id="decompress-table">
@@ -111,11 +114,7 @@
           </div>
         </div>
     </main>
-      <py-script src="./src/py_code.py">
-        
-          <!-- execute  py_code.py  -->
-
-      </py-script>
+      <script type="py" src="./src/py_code.py" config="pyconfig.json"></script>
     </body>
     
     

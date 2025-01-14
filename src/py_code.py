@@ -1,7 +1,49 @@
 from src.lzw import compress_lzw, decompress_lzw
-from js import document
+from pyscript import document, when
 
 # class definitions.
+
+class Element:
+    """Helper class to maintain compatibility"""
+    def __init__(self, id):
+        self.element = document.getElementById(id)
+        
+    @property
+    def value(self):
+        return self.element.value
+        
+    @value.setter
+    def value(self, val):
+        self.element.value = val
+    
+    def remove_class(self, class_name):
+        self.element.classList.remove(class_name)
+        
+    def add_class(self, class_name):
+        self.element.classList.add(class_name)
+        
+    def write(self, content, append=True):
+        if append:
+            self.element.innerHTML += str(content)
+        else:
+            self.element.innerHTML = str(content)
+
+
+# Event handlers
+@when("click", "#compress")
+def handle_compress(event):
+    """Handle compress button click"""
+    compress(res)
+
+@when("click", "#decompress")
+def handle_decompress(event):
+    """Handle decompress button click"""
+    decompress(res)
+
+@when("click", "#override-inp")
+def handle_override(event):
+    """Handle override checkbox click"""
+    check_box_action()
 
 class comp_gen_obj():
 
